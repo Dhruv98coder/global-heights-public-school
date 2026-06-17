@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Heights Public School | Admissions Open 2026-27</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#8b0000',
+                        primaryDark: '#5c0000',
+                        secondary: '#fca311',
+                        secondaryDark: '#e69500',
+                        darkBg: '#111827'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.88) 0%, rgba(139, 0, 0, 0.50) 100%);
+        }
+
+        .writing-vertical {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        .program-card {
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-bottom-color: #fca311;
+        }
+
+        .gallery-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 60%);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8b0000;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b0000;
+        }
+
+        /* Marquee pause on hover */
+        marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Smooth card hover */
+        .facility-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .facility-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Form focus */
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+    <!-- ==================== TOP BAR ==================== -->
+    <div class="bg-primary text-white text-xs md:text-sm py-2.5 px-4 hidden md:block border-b border-white/10 relative z-50">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center gap-4 md:gap-6">
+                <span class="flex items-center gap-2"><i class="fas fa-phone-alt text-secondary"></i> +91 98765 43210</span>
+                <span class="flex items-center gap-2"><i class="fas fa-envelope text-secondary"></i> admissions@globalheights.edu</span>
+                <span class="flex items-center gap-2"><i class="fas fa-clock text-secondary"></i> Mon–Sat: 8:00 AM – 3:00 PM</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-secondary font-bold animate-pulse text-xs md:text-sm">Admissions Open 2026-27</span>
+                <a href="#" class="hover:text-secondary transition text-xs">Student Portal</a>
+                <a href="#" class="hover:text-secondary transition text-xs">Pay Fees</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="w-full z-40 bg-white shadow-md transition-all duration-300 sticky top-0" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 md:h-24 items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <div class="w-11 h-11 md:w-13 md:h-13 bg-primary rounded-full flex items-center justify-center text-white border-2 border-secondary">
+                        <i class="fas fa-book-reader text-xl md:text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl md:text-2xl lg:text-3xl font-extrabold text-primary leading-none tracking-tight">GLOBAL HEIGHTS</h1>
+                        <p class="text-[9px] md:text-[11px] text-gray-600 font-bold tracking-[0.2em] uppercase mt-0.5">Public School</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-6 xl:gap-8">
+                    <a href="#home" class="text-gray-800 hover:text-primary font-semibold text-sm uppercase transition relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Home</a>
+                    <a href="#about" class="text-gray-800 hover:text-primary font-semibold text-sm uppercase transition relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">About</a>
+                    <a href="#academics" class="text-gray-800 hover:text-primary font-semibold text-sm uppercase transition relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Academics</a>
+                    <a href="#campus" class="text-gray-800 hover:text-primary font-semibold text-sm uppercase transition relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Campus</a>
+                    <a href="#fees" class="text-gray-800 hover:text-primary font-semibold text-sm uppercase transition relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Fees</a>
+                    <a href="#contact" class="bg-secondary text-primary font-bold px-6 py-2.5 rounded text-sm uppercase hover:bg-yellow-500 transition shadow-md hover:shadow-lg">Apply Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center lg:hidden">
+                    <button type="button" onclick="toggleMobileMenu()" class="text-gray-700 hover:text-primary focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl z-50">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 border-b border-gray-100" onclick="toggleMobileMenu()">Home</a>
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 border-b border-gray-100" onclick="toggleMobileMenu()">About</a>
+                <a href="#academics" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 border-b border-gray-100" onclick="toggleMobileMenu()">Academics</a>
+                <a href="#campus" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 border-b border-gray-100" onclick="toggleMobileMenu()">Campus</a>
+                <a href="#fees" class="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 border-b border-gray-100" onclick="toggleMobileMenu()">Fee Structure</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-bold text-primary hover:bg-gray-50" onclick="toggleMobileMenu()">Apply Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== STICKY ENQUIRY BUTTON ==================== -->
+    <a href="#contact" class="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-secondary text-primary py-4 px-2 rounded-l-lg shadow-2xl hover:bg-yellow-400 transition flex flex-col items-center gap-3 border-2 border-r-0 border-white group">
+        <i class="fas fa-graduation-cap text-xl group-hover:scale-110 transition"></i>
+        <span class="writing-vertical font-bold text-sm tracking-widest uppercase">Enquire Now</span>
+    </a>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="relative min-h-[600px] lg:h-[85vh] flex items-center pt-8 pb-16 lg:py-0">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc0obKbXl7-kDVNg2WSP4gQzGWH9LGkB5K55cfOvfaNw&s=10" alt="School Campus" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center text-white">
+            <div class="inline-block bg-primary/80 border border-secondary/50 text-secondary text-sm font-bold px-5 py-1.5 rounded-full uppercase tracking-wider mb-5 backdrop-blur-sm">
+                <i class="fas fa-star mr-2"></i> Established 1998
+            </div>
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-5 leading-[1.1]">
+                Create Your <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-200">Future Here.</span>
+            </h2>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 font-light max-w-2xl mx-auto">
+                Empowering minds from Grades 1 to 12. Join a legacy of excellence, holistic education, and world-class facilities.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#academics" class="bg-primary text-white font-bold px-8 py-3.5 rounded-lg hover:bg-primaryDark transition shadow-lg border border-red-700">
+                    Explore Programs
+                </a>
+                <a href="#campus" class="bg-white/10 backdrop-blur-md text-white font-bold px-8 py-3.5 rounded-lg hover:bg-white/20 transition border border-white/30 flex items-center gap-2">
+                    <i class="fas fa-play-circle text-secondary"></i> Campus Tour
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NEWS TICKER ==================== -->
+    <div class="bg-darkBg text-white border-y border-gray-800 flex items-center relative z-20 overflow-hidden">
+        <div class="bg-primary px-4 md:px-6 py-3 font-bold text-xs md:text-sm z-10 whitespace-nowrap shadow-[5px_0_15px_rgba(0,0,0,0.6)] flex-shrink-0">
+            <i class="fas fa-bullhorn mr-2"></i> LATEST UPDATES
+        </div>
+        <marquee behavior="scroll" direction="left" class="py-3 text-xs md:text-sm font-medium flex-1 text-gray-300 px-2" onmouseover="this.stop();" onmouseout="this.start();">
+            <span class="mx-4 text-secondary"><i class="fas fa-star"></i></span> Registrations open for Academic Session 2026-27 for Grades 1 to 12.
+            <span class="mx-4 text-secondary"><i class="fas fa-star"></i></span> Congratulations to our Grade 12 students for achieving 100% board results!
+            <span class="mx-4 text-secondary"><i class="fas fa-star"></i></span> Annual Sports Meet scheduled for next month.
+            <span class="mx-4 text-secondary"><i class="fas fa-star"></i></span> Ranked No. 1 Day School in the region.
+            <span class="mx-4 text-secondary"><i class="fas fa-star"></i></span> New state-of-the-art science lab inaugurated.
+        </marquee>
+    </div>
+
+    <!-- ==================== ABOUT / STATS ==================== -->
+    <section id="about" class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Why Global Heights?</h3>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">A legacy of academic excellence, nurturing young minds with care and innovation.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:divide-x divide-gray-200">
+                <div class="text-center px-2 mb-4 lg:mb-0">
+                    <h4 class="text-3xl md:text-4xl font-extrabold text-primary mb-1">5+</h4>
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Years of Legacy</p>
+                </div>
+                <div class="text-center px-2 mb-4 lg:mb-0">
+                    <h4 class="text-3xl md:text-4xl font-extrabold text-primary mb-1">99%</h4>
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Board Results</p>
+                </div>
+                <div class="text-center px-2 mb-4 lg:mb-0">
+                    <h4 class="text-3xl md:text-4xl font-extrabold text-primary mb-1">A+</h4>
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">CBSE Rating</p>
+                </div>
+                <div class="text-center px-2 mb-4 lg:mb-0">
+                    <h4 class="text-3xl md:text-4xl font-extrabold text-primary mb-1">20+</h4>
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Acres Campus</p>
+                </div>
+                <div class="text-center px-2 mb-4 lg:mb-0">
+                    <h4 class="text-3xl md:text-4xl font-extrabold text-primary mb-1">1500+</h4>
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Total Seats</p>
+                </div>
+                <div class="text-center px-2 mb-4 lg:mb-0">
+                    <h4 class="text-3xl md:text-4xl font-extrabold text-primary mb-1">150+</h4>
+                    <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide">Expert Faculty</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ACADEMICS / CLASSES ==================== -->
+    <section id="academics" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <h2 class="text-sm font-bold tracking-widest text-primary uppercase mb-2"><i class="fas fa-graduation-cap mr-1"></i> Academics</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Our Academic Wings</h3>
+                    <div class="w-20 h-1 bg-secondary mt-4"></div>
+                </div>
+                <p class="text-gray-600 max-w-xl text-sm md:text-base border-l-2 border-gray-300 pl-4">
+                    A comprehensive curriculum tailored to each stage, building a strong foundation for higher education.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Primary Wing -->
+                <div class="program-card bg-white rounded-xl overflow-hidden border border-gray-200 border-b-4 border-b-gray-200 shadow-sm">
+                    <div class="h-52 overflow-hidden">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYQ_WjU1_PvxgCzKCbXp6rigcTY4QJCfZGsRCq27a27w&s=10" alt="Primary Classes" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs font-bold text-secondary uppercase tracking-wider mb-2">Grades 1 – 5</div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-3">Primary Education</h4>
+                        <p class="text-gray-600 text-sm mb-5">Focus on foundational literacy, numeracy, and fostering curiosity through activity-based learning.</p>
+                        <a href="#contact" class="text-primary font-semibold text-sm hover:text-secondary transition flex items-center">
+                            Enquire Now <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Middle Wing -->
+                <div class="program-card bg-white rounded-xl overflow-hidden border border-gray-200 border-b-4 border-b-gray-200 shadow-sm">
+                    <div class="h-52 overflow-hidden">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyoTa0hWVu2DgjxSG5UQqM7VzFDYd0fnMxkSsb0Hgo-A&s=10" alt="Middle Classes" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs font-bold text-secondary uppercase tracking-wider mb-2">Grades 6 – 8</div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-3">Middle School</h4>
+                        <p class="text-gray-600 text-sm mb-5">Developing critical thinking, project-based skills, and exposure to specialized subjects and labs.</p>
+                        <a href="#contact" class="text-primary font-semibold text-sm hover:text-secondary transition flex items-center">
+                            Enquire Now <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Senior Wing -->
+                <div class="program-card bg-white rounded-xl overflow-hidden border border-gray-200 border-b-4 border-b-gray-200 shadow-sm">
+                    <div class="h-52 overflow-hidden">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIdjTbPFY-dfDDVzkpATOCuFXqI7npqZ3VFVDhHcO2Cw&s=10" alt="Senior Classes" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs font-bold text-secondary uppercase tracking-wider mb-2">Grades 9 – 12</div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-3">Senior Secondary</h4>
+                        <p class="text-gray-600 text-sm mb-5">Rigorous academic preparation with specialized streams — Science, Commerce, Humanities.</p>
+                        <a href="#contact" class="text-primary font-semibold text-sm hover:text-secondary transition flex items-center">
+                            Enquire Now <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CAMPUS LIFE ==================== -->
+    <section id="campus" class="py-20 bg-darkBg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-secondary uppercase mb-2"><i class="fas fa-tree mr-1"></i> Student Life</h2>
+                <h3 class="text-3xl md:text-4xl font-bold">World-Class Campus Facilities</h3>
+                <div class="w-20 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Main Feature: Playground -->
+                <div class="relative group rounded-xl overflow-hidden shadow-2xl min-h-[380px]">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfFnjNRX1EGUrVDS52QnvMjVUBaQYhq5bqEJys4BFURQ&s=10" alt="Playground" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider mb-3 inline-block"><i class="fas fa-futbol mr-1"></i> Sports</span>
+                        <h4 class="text-3xl font-bold mb-2 text-white">Athletic Excellence</h4>
+                        <p class="text-gray-200 text-sm max-w-md">Our massive playground supports football, cricket, athletics, and basketball — promoting physical well-being alongside academics.</p>
+                    </div>
+                </div>
+
+                <!-- Other Facilities Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Garden -->
+                    <div class="relative group rounded-xl overflow-hidden min-h-[180px]">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7jtIbvI0XFJewxiHRFEpa_rxjLjh-12kmKUVcace8jQ&s=10" alt="Garden" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h5 class="text-lg font-bold"><i class="fas fa-leaf text-secondary mr-2"></i> Botanical Gardens</h5>
+                        </div>
+                    </div>
+                    <!-- Library -->
+                    <div class="relative group rounded-xl overflow-hidden min-h-[180px]">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6WCb4Yh4bIHfin41-O9rPXXH0gw36bNN1XKYriFrKZw&s=10" alt="Library" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h5 class="text-lg font-bold"><i class="fas fa-book text-secondary mr-2"></i> Central Library</h5>
+                        </div>
+                    </div>
+                    <!-- Labs -->
+                    <div class="relative group rounded-xl overflow-hidden min-h-[180px]">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMc1TPUWm-obsb9amsOEHxvNs3WAYxXZsrPZL-RcVmKA&s=10" alt="Science Labs" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h5 class="text-lg font-bold"><i class="fas fa-flask text-secondary mr-2"></i> Advanced Labs</h5>
+                        </div>
+                    </div>
+                    <!-- IT Center -->
+                    <div class="relative group rounded-xl overflow-hidden min-h-[180px]">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgWjC57g70fDd-wUj6lJ-sHLE1Ab9iK3hFJ_GEDMPaXA&s=10" alt="IT Center" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h5 class="text-lg font-bold"><i class="fas fa-laptop text-secondary mr-2"></i> Smart IT Center</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FACULTY ==================== -->
+    <section class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-sm font-bold tracking-widest text-primary uppercase mb-2"><i class="fas fa-chalkboard-teacher mr-1"></i> Our Educators</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Class Room</h3>
+                <div class="w-20 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md group hover:shadow-xl transition">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdcwQYSGufhuo5G5D9aiVHB4PPFpVTP7TSSuHRjZIIGQ&s=100" alt="Staff" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" />
+                    <div class="p-6 text-center">
+                        <h4 class="text-xl font-bold text-gray-900">Highly Qualified Education</h4>
+                        <p class="text-sm text-gray-500 mt-2">Good Class Room</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md group hover:shadow-xl transition">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Nm-Zf4fnCbyv2rMQvQ5DW8Vy9BuPceSvCbj95muz7Q&s=10" alt="Teaching" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" />
+                    <div class="p-6 text-center">
+                        <h4 class="text-xl font-bold text-gray-900">Interactive Teaching</h4>
+                        <p class="text-sm text-gray-500 mt-2">Modern, interactive methods to make learning engaging and memorable.</p>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GALLERY ==================== -->
+    <section class="py-20 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-sm font-bold tracking-widest text-primary uppercase mb-2"><i class="fas fa-images mr-1"></i> Visual Tour</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Life at Global Heights</h3>
+                <div class="w-20 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[240px]">
+                <!-- Main Building (spans 2 cols, 2 rows) -->
+                <div class="col-span-2 row-span-2 relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Main Building" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white font-bold text-xl">Main Campus</div>
+                </div>
+                <!-- Playground -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFmMu-NZsI-xUQ1OTFOaTdPYEgx1x4yisfBGwc1KIEpg&s=10" alt="Playground" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white font-bold">Playground</div>
+                </div>
+                <!-- Library -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUghhlEDkauk4XynrnhKIWbhJAcEdQWIZ2MY4S_duk-A&s=10" alt="Library" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white font-bold">Library</div>
+                </div>
+                <!-- Classroom -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Classroom" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white font-bold">Classrooms</div>
+                </div>
+                <!-- Sports -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8JzQdNbP4KK3HladQ7cWopnhnpOKxjxLUyhajcqQIDg&s=10" alt="Sports" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-white font-bold">Sports &amp; Activities</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEE STRUCTURE ==================== -->
+    <section id="fees" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-primary uppercase mb-2"><i class="fas fa-rupee-sign mr-1"></i> Admissions</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Fee Structure 2026-27</h3>
+                <div class="w-20 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-5xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-gray-200">
+                <!-- Primary -->
+                <div class="bg-white p-8 text-center border-r border-gray-200 hover:bg-gray-50 transition">
+                    <h4 class="text-xl font-bold text-gray-900 mb-1">Primary Wing</h4>
+                    <p class="text-sm text-gray-500 mb-6">Grades 1 – 5</p>
+                    <div class="text-primary font-extrabold text-4xl mb-6">₹3,000 <span class="text-sm text-gray-500 font-normal">/ term</span></div>
+                    <ul class="text-sm text-gray-600 space-y-3 mb-8 text-left">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Tuition Fee</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Library &amp; Activities</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Health checkup</li>
+                    </ul>
+                    <button class="w-full py-2.5 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition">Pay Fees</button>
+                </div>
+
+                <!-- Middle (Highlighted) -->
+                <div class="bg-primary text-white p-8 text-center relative transform md:scale-105 md:-my-4 shadow-2xl rounded-lg md:rounded-none">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-secondary"></div>
+                    <div class="absolute top-3 right-3 text-secondary"><i class="fas fa-star"></i></div>
+                    <h4 class="text-xl font-bold mb-1">Middle Wing</h4>
+                    <p class="text-sm text-gray-300 mb-6">Grades 6 – 8</p>
+                    <div class="font-extrabold text-4xl mb-6 text-white">₹6,000 <span class="text-sm text-gray-300 font-normal">/ term</span></div>
+                    <ul class="text-sm text-gray-200 space-y-3 mb-8 text-left">
+                        <li><i class="fas fa-check text-secondary mr-2"></i> All Primary Features</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Computer Lab Fee</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Sports Coaching</li>
+                    </ul>
+                    <button class="w-full py-2.5 bg-secondary text-primary font-bold rounded-lg hover:bg-yellow-400 transition">Pay Fees</button>
+                </div>
+
+                <!-- Senior -->
+                <div class="bg-white p-8 text-center border-l border-gray-200 hover:bg-gray-50 transition">
+                    <h4 class="text-xl font-bold text-gray-900 mb-1">Senior Wing</h4>
+                    <p class="text-sm text-gray-500 mb-6">Grades 9 – 12</p>
+                    <div class="text-primary font-extrabold text-4xl mb-6">₹12,000 <span class="text-sm text-gray-500 font-normal">/ term</span></div>
+                    <ul class="text-sm text-gray-600 space-y-3 mb-8 text-left">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> All Middle Features</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Science Lab Fee</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Board Exam Prep</li>
+                    </ul>
+                    <button class="w-full py-2.5 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition">Pay Fees</button>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 mt-8 text-xs">* Transport and uniform costs are excluded. Terms and conditions apply.</p>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT / ENQUIRY ==================== -->
+    <section id="contact" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
+                <!-- Left: Info -->
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-sm font-bold tracking-widest text-primary uppercase mb-2"><i class="fas fa-headset mr-1"></i> Get In Touch</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Start Your Journey With Us</h3>
+                    <div class="w-20 h-1 bg-secondary mb-8"></div>
+                    <p class="text-gray-600 mb-8 text-lg">Have questions about admissions, fees, or our curriculum? Fill out the enquiry form and our admission counselors will get back to you shortly.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-primary shadow-sm flex-shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium">Call Us (Mon–Sat, 8AM – 4PM)</p>
+                                <p class="font-bold text-gray-900 text-lg">+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-primary shadow-sm flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium">Email Us</p>
+                                <p class="font-bold text-gray-900 text-lg">admissions@globalheights.edu</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-primary shadow-sm flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium">Visit Us</p>
+                                <p class="font-bold text-gray-900 text-lg">123 Education Boulevard, Knowledge City, Delhi 110001</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="w-full lg:w-1/2 max-w-lg mx-auto lg:mx-0">
+                    <div class="bg-white rounded-xl shadow-2xl overflow-hidden border-t-4 border-secondary">
+                        <div class="bg-gray-50 py-4 px-6 border-b border-gray-100 flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-gray-900"><i class="fas fa-pencil-alt text-primary mr-2"></i> Admission Enquiry</h3>
+                            <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">2026-27</span>
+                        </div>
+
+                        <form onsubmit="handleFormSubmit(event)" class="p-6 space-y-4" id="quickForm">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1">Student Name *</label>
+                                <input type="text" id="q_name" required class="form-input w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm transition" placeholder="Enter student's full name" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1">Email Address *</label>
+                                <input type="email" id="q_email" required class="form-input w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm transition" placeholder="you@example.com" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1">Mobile Number *</label>
+                                <div class="flex">
+                                    <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-300 bg-gray-100 text-gray-500 text-sm">+91</span>
+                                    <input type="tel" id="q_phone" required class="flex-1 px-4 py-3 rounded-r-lg bg-gray-50 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm transition" placeholder="98765 43210" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1">Applying For *</label>
+                                <select id="q_grade" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none text-sm text-gray-600 transition">
+                                    <option value="">Select Grade</option>
+                                    <option value="primary">Primary (Grades 1-5)</option>
+                                    <option value="middle">Middle (Grades 6-8)</option>
+                                    <option value="senior">Senior (Grades 9-12)</option>
+                                </select>
+                            </div>
+
+                            <div id="q_success" class="hidden bg-green-50 text-green-700 text-sm p-3 rounded-lg border border-green-200 flex items-center gap-2">
+                                <i class="fas fa-check-circle"></i> Thank you! Our admission counselor will call you shortly.
+                            </div>
+
+                            <button type="submit" class="w-full bg-secondary text-primary font-bold py-3.5 rounded-lg hover:bg-yellow-500 transition duration-300 shadow-md hover:shadow-lg text-sm uppercase tracking-wider">
+                                Submit Enquiry <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                            <p class="text-xs text-center text-gray-500 mt-2">By submitting, you agree to our terms and conditions.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-darkBg text-gray-300 pt-16 border-t-4 border-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white border border-secondary">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-bold text-white tracking-tight leading-none">GLOBAL HEIGHTS</h2>
+                            <span class="text-[10px] text-gray-400 tracking-widest uppercase">Public School</span>
+                        </div>
+                    </div>
+                    <p class="text-sm mb-6 leading-relaxed">Dedicated to academic excellence, innovation, and shaping global citizens since 1998.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
+                    <div class="w-10 h-0.5 bg-secondary mb-4"></div>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#about" class="hover:text-secondary transition">About The School</a></li>
+                        <li><a href="#academics" class="hover:text-secondary transition">Academic Programs</a></li>
+                        <li><a href="#fees" class="hover:text-secondary transition">Admissions &amp; Fees</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Career Opportunities</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Alumni Network</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Contact Us</h4>
+                    <div class="w-10 h-0.5 bg-secondary mb-4"></div>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-secondary mt-1 w-5"></i>
+                            <span>123 Education Boulevard,<br />Knowledge City, Delhi 110001</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-secondary w-5"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-secondary w-5"></i>
+                            <span>admissions@globalheights.edu</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Subscribe</h4>
+                    <div class="w-10 h-0.5 bg-secondary mb-4"></div>
+                    <p class="text-sm mb-4">Get the latest news and updates from our campus.</p>
+                    <form class="flex" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                        <input type="email" placeholder="Email Address" class="flex-1 px-3 py-2.5 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:border-secondary text-sm text-white transition" required />
+                        <button type="submit" class="bg-secondary text-primary px-4 py-2.5 rounded-r-lg font-bold hover:bg-yellow-500 transition"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="border-t border-gray-800 py-6 flex flex-col md:flex-row justify-between items-center text-xs gap-4">
+                <p>&copy; 2026 <span class="text-white font-semibold">Global Heights Public School</span>. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Disclaimer</a>
+                    <a href="#" class="hover:text-white transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+        // ---- Navbar scroll effect ----
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl', 'bg-white/95', 'backdrop-blur-md');
+                nav.classList.remove('shadow-md', 'bg-white');
+            } else {
+                nav.classList.add('shadow-md', 'bg-white');
+                nav.classList.remove('shadow-xl', 'bg-white/95', 'backdrop-blur-md');
+            }
+        });
+
+        // ---- Mobile menu toggle ----
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // ---- Form submission ----
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('q_name').value.trim();
+            const phone = document.getElementById('q_phone').value.trim();
+            const email = document.getElementById('q_email').value.trim();
+            const grade = document.getElementById('q_grade').value;
+
+            if (!name || !phone || !email || !grade) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Simple email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            const successBox = document.getElementById('q_success');
+            successBox.classList.remove('hidden');
+            document.getElementById('quickForm').reset();
+
+            setTimeout(function() {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+
+        // ---- Smooth anchor scrolling ----
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ---- Active nav link highlight on scroll ----
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a, #mobile-menu a');
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(function(section) {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(function(link) {
+                link.classList.remove('text-primary');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('text-primary');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
